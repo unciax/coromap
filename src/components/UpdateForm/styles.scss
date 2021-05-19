@@ -21,7 +21,9 @@
     .MuiCollapse-container{
         .MuiCollapse-wrapper{
             .MuiCollapse-wrapperInner{
-
+                height: 60vh;
+                overflow-y: scroll;
+                
                 .radio-box-container{
                     padding: 10px 0px;
                 }
