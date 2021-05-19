@@ -91,7 +91,7 @@ const UpdateForm = props => {
         if(!latitude) return
         if(!longitude) return
 
-        const complementary = "";
+        let complementary = "";
         if(complementarySeat){
             complementary =+ "梅花座 "
         }else if(complementaryFlat){
