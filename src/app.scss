@@ -1,0 +1,112 @@
+.App{
+    background: #282c34;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background: #282c34;
+
+    .side-menu-open{
+        width: 25%;
+        height: 90vh;
+        overflow: hidden;
+        animation: openSideMenu 0.2s ease-in;
+    }
+
+    .side-menu-close{
+        width: 7%;
+        height: 90vh;
+        overflow: hidden;
+        animation: closeSideMenu 0.2s ease-in;
+    }
+
+
+    @mixin map-container{
+        height:95vh;
+        overflow: hidden;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        background: #fff;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .map-container-open{
+        // width: 250%;
+        @include map-container;
+        animation: openMapView 0.2s ease-in;
+    }
+
+    .map-container-close{
+        width: 80%;
+        @include map-container;
+        animation: closeMapView 0.2s ease-in;
+    }
+
+    @keyframes openMapView {
+        0% {
+            width: 80%;
+          }
+        50% {
+            width: 150%;
+        }
+        100% {
+            width: 250%;
+        }
+    }
+
+    @keyframes closeMapView {
+        0% {
+            width: 250%;
+          }
+        50% {
+            width: 150%;
+        }
+        100% {
+            width: 80%;
+        }
+    }
+
+    @keyframes openSideMenu {
+        0% {
+            width: 7%;
+          }
+        50% {
+            width: 14%;
+        }
+        100% {
+            width: 25%;
+        }
+    }
+
+    @keyframes closeSideMenu {
+        0% {
+            width: 25%;
+          }
+        50% {
+            width: 14%;
+        }
+        100% {
+            width: 7%;
+        }
+    }
+};
+
+@media (max-width: 1024px) {
+    .App{
+        align-items: flex-end;
+
+        .side-menu-open{
+            width: 0px;
+        }
+    
+        .side-menu-close{
+            width: 0px;
+        }
+
+        .map-container-close{
+            width: 100%;
+        }
+    
+    }
+}

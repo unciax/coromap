@@ -1,0 +1,64 @@
+.list-items{
+    display: flex;
+    flex-direction: column;
+    // height: 80vh;
+    padding: 0px 5%;
+    // margin: 0px 0px 25px;
+    
+    .list-items-header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        >h2{
+            color: #61dafb;
+        }
+
+        .material-icons{
+            color: #61dafb;
+            cursor: pointer;
+        }
+    }
+
+    .MuiCollapse-container{
+        .MuiCollapse-wrapper{
+            .MuiCollapse-wrapperInner{
+                height: 60vh;
+                overflow-y: scroll;
+
+                .list-item{
+                    padding: 10px 5px;
+                    box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, 0.5);
+                    >div{
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+                        border-bottom: 1px solid rgba(136, 136, 136, 0.5);
+                        padding: 0px 0px 5px 0px;
+                        margin: 2px 1px 5px 1px;
+
+                        >h2{
+                            font-size: 1.25rem;
+                            color: #61dafb;
+
+
+                            >span{
+                                cursor: pointer;
+                                transform: translateY(5px);
+                            }
+                        }
+                    }
+
+            
+                    >p{
+                        margin: 1px 0px;
+                        font-size: 0.9rem;
+                        color: #ececec;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+}
