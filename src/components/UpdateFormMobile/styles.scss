@@ -1,0 +1,52 @@
+.icon-container{
+    display: none;
+}
+
+
+@media(max-width: 1024px){
+    .icon-container{
+        display: block;
+        position: absolute;
+        z-index: 2000000;
+        left: 20px;
+        bottom: 20px;
+        cursor: pointer;
+    
+        .material-icons{
+            padding: 15px;    
+            background: #61dafb;
+            color: #fff;    
+            border-radius: 50px;
+            box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.5);
+            font-size: 30px;
+        }
+    }
+    .inputs-containers{
+        width: calc(90% - 40px);
+        margin: 40px 5%;
+        width: 50%;
+        background: #fff;
+        margin: 40px 25%;
+        padding: 20px;
+        border-radius: 15px;
+        z-index: 13400;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        .inputs-containers-inputs{
+            max-height: 80vh;
+            overflow-y: scroll;
+
+            .MuiFormControl-root{
+                margin: 5px 0px;
+                width: 100%;
+        
+                .MuiFormGroup-root{
+                    display: flex;
+                    flex-direction: row;
+                }
+            }
+        }
+    };    
+}
