@@ -62,15 +62,16 @@ export default props => {
                             {state.markerList.map(marker=> 
                                 <Marker position={[marker.latitude, marker.longitude]} key={marker.key}>
                                     <Popup>
-                                        <p>店家名稱: {marker["店家名稱"]}</p>
-                                        <p>店家防疫措施: {marker["店家防疫措施"]}</p>
-                                        <p>是否仍提供內用服務: {marker["是否仍提供內用服務"]}</p>
-                                        <p>是否提供外帶: {marker["是否提供外帶"]}</p>
-                                        <p>是否提供外送: {marker["是否提供外送"]}</p>
-                                        <p>是否繼續維持營業: {marker["是否繼續維持營業"]}</p>
-                                        <p>時間戳記: {marker["時間戳記"]}</p>
-                                        <p>營業時間調整情況: {marker["營業時間調整情況"]}</p>
-                                        <p>防疫外帶或外送優惠: {marker["防疫外帶或外送優惠"]}</p>
+                                        <p>店家名稱: {marker["shop_name"]}</p>
+                                        <p>店家防疫措施: {marker["prevention_measures"]}</p>
+                                        <p>是否仍提供內用服務: {marker["inside"]}</p>
+                                        <p>內用防疫措施: {marker["inside_status"]}</p>
+                                        <p>是否提供外帶: {marker["outside"]}</p>
+                                        <p>是否提供外送: {marker["delivery"]}</p>
+                                        <p>是否繼續維持營業: {marker["open"]}</p>
+                                        <p>時間戳記: {marker["last_updated_at"]}</p>
+                                        <p>營業時間調整情況: {marker["open_time_change"]}</p>
+                                        <p>防疫外帶或外送優惠: {marker["discount"]}</p>
                                     </Popup>
                                 </Marker>
                             )}
