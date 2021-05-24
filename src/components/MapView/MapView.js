@@ -35,14 +35,6 @@ export default props => {
         };
       },[mapDataList])
 
-    const fillZero = num => {
-        return parseInt(num) > 9? parseInt(num) : `0${parseInt(num)}`;
-    }
-    const dateTransform = datetime => {
-        const date = new Date(datetime * 1000);
-        return `${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()} ${fillZero(date.getHours())}:${fillZero(date.getMinutes())}:${fillZero(date.getSeconds())}`
-    }
-
       console.log(state)
 
       if(fetchMapDataLoading){
@@ -76,7 +68,7 @@ export default props => {
                                         <p>是否提供外帶: {marker["outside"]}</p>
                                         <p>是否提供外送: {marker["delivery"]}</p>
                                         <p>是否繼續維持營業: {marker["open"]}</p>
-                                        <p>時間戳記: {dateTransform(marker["last_updated_at"])}</p>
+                                        <p>時間戳記: {new Date(marker["last_updated_at"] * 1000).toLocaleString('lt-LT', { timeZone: 'Asia/Taipei' })}</p>
                                         <p>營業時間調整情況: {marker["open_time_change"]}</p>
                                         <p>防疫外帶或外送優惠: {marker["discount"]}</p>
                                     </Popup>
