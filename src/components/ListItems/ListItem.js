@@ -14,7 +14,7 @@ const ListItem = props => {
     }
     return(
         <div className="list-item" key={data["shop_name"]}>
-            <div><h2>{data["shop_name"]} <Icon onClick={()=>{ window.open(data["Google map url"], "_blank") }}>map</Icon></h2></div>
+            <div><h2>{data["shop_name"]} <Icon onClick={()=>{ window.open(data["url"], "_blank") }}>map</Icon></h2></div>
             <p>店家防疫措施: {data["prevention_measures"]}</p>
             <p>是否仍提供內用服務: {data["inside"]}</p>
             <p>內用防疫措施: {data["inside_status"]}</p>
