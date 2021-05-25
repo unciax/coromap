@@ -90,6 +90,9 @@
             width: 7%;
         }
     }
+    .icon-container {
+        display: none;
+    }
 };
 
 @media (max-width: 1024px) {
@@ -97,7 +100,12 @@
         align-items: flex-end;
 
         .side-menu-open{
-            width: 0px;
+            position: fixed;
+            z-index: 1000;
+            background: #282c34;
+            top: 0px;
+            height: 100vh;
+            width: 85%;
         }
     
         .side-menu-close{
@@ -107,6 +115,22 @@
         .map-container-close{
             width: 100%;
         }
-    
+        .icon-container {
+            display: block;
+            position: absolute;
+            z-index: 2000000;
+            left: 20px;
+            bottom: 20px;
+            cursor: pointer;
+        
+            .material-icons {
+                padding: 15px;
+                background: #61dafb;
+                color: #fff;
+                border-radius: 50px;
+                box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.5);
+                font-size: 30px;
+            }
+        }
     }
 }
