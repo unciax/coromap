@@ -16,7 +16,7 @@ export const fetchMapData = () => {
 export const updateStoresInfo = (data) => {
     return axios({
       method: "post",
-      url: `${process.env.REACT_APP_BASE_URL}/api/v1/stores`,
+      url: `${process.env.REACT_APP_API_URL}/api/v1/stores`,
       data: data
     })
       .then((res) => {
