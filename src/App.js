@@ -1,8 +1,8 @@
 import React from "react";
 
+import Icon from "@material-ui/core/Icon";
 import Maps from "./components/MapView/MapView";
 import ListItems from "./components/ListItems/ListItems";
-import UpdateFormMobile from "./components/UpdateFormMobile/UpdateFormMobile";
 import UpdateForm from "./components/UpdateForm/UpdateForm";
 import { useSnackbar } from "notistack";
 import { message } from "./utils/common";
@@ -64,7 +64,6 @@ function App() {
 
   return (
     <div className="App">
-      <UpdateFormMobile />
       <div className={state.isSideMenuOpen ? "side-menu-open" : "side-menu-close"}>
         { state.isSideMenuOpen &&
           <>
@@ -80,6 +79,9 @@ function App() {
           toggleSideMenu={toggleSideMenu}
           isSideMenuOpen={state.isSideMenuOpen}
         />
+      </div>
+      <div className="icon-container">
+        <Icon onClick={toggleSideMenu}>{state.isSideMenuOpen ? 'close' : 'menu'}</Icon>
       </div>
     </div>
   );

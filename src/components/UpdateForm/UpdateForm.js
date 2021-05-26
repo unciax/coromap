@@ -26,10 +26,10 @@ const UpdateForm = props => {
         discountService: "",
         seatAdjustment: "",
         openingHoursAdjustment: "",
-        isOpen: "open",
-        forHere: "yes",
-        toGo: "yes",
-        delivery: "yes",
+        isOpen: "是",
+        forHere: "是",
+        toGo: "是",
+        delivery: "是",
         complementarySeat: false,
         complementaryFlat: false,
         complementaryWashroom: false,
@@ -101,19 +101,19 @@ const UpdateForm = props => {
         }
 
         const updateData = {
-            "Google map url": googleMapUrl,
+            "url": googleMapUrl,
             "latitude": latitude ,
             "longitude": longitude,
-            "內用座位調整情況": seatAdjustment,
-            "店家名稱": name,
-            "店家防疫措施": complementary,
-            "是否仍提供內用服務": forHere ? "是" : "否",
-            "是否提供外帶": toGo ? "是" : "否",
-            "是否提供外送": delivery ? "是" : "否",
-            "是否繼續維持營業": isOpen ? "是" : "否",
-            "時間戳記": new Date().toLocaleDateString(),
-            "營業時間調整情況": openingHoursAdjustment,
-            "防疫外帶或外送優惠": discountService,
+            "inside_status": seatAdjustment,
+            "shop_name": name,
+            "prevention_measures": complementary,
+            "inside": forHere,
+            "outside": toGo,
+            "delivery": delivery,
+            "open": isOpen,
+            "last_updated_at": Math.floor(new Date().getTime()/1000),
+            "open_time_change": openingHoursAdjustment,
+            "discount": discountService,
         };
         updateStoreInfo(updateData)
     };
@@ -133,26 +133,26 @@ const UpdateForm = props => {
                 <FormControl className="radio-box-container">
                     <FormLabel component="legend">是否繼續維持營業</FormLabel>
                     <RadioGroup name="isOpen" value={state.isOpen} onChange={handleUpdateFiled}>
-                        <FormControlLabel value="open" control={<Radio />} label="是" />
-                        <FormControlLabel value="close" control={<Radio />} label="否" />
+                        <FormControlLabel value="是" control={<Radio />} label="是" />
+                        <FormControlLabel value="否" control={<Radio />} label="否" />
                     </RadioGroup>
                     <FormLabel component="legend">是否提供內用服務</FormLabel>
                     <RadioGroup name="forHere" value={state.forHere} onChange={handleUpdateFiled}>
-                        <FormControlLabel value="yes" control={<Radio />} label="是" />
-                        <FormControlLabel value="no" control={<Radio />} label="否" />
-                        <FormControlLabel value="notSure" control={<Radio />} label="不確定" />
+                        <FormControlLabel value="是" control={<Radio />} label="是" />
+                        <FormControlLabel value="否" control={<Radio />} label="否" />
+                        <FormControlLabel value="不確定" control={<Radio />} label="不確定" />
                     </RadioGroup>
                     <FormLabel component="legend">是否提供外帶</FormLabel>
                     <RadioGroup name="toGo" value={state.toGo} onChange={handleUpdateFiled}>
-                        <FormControlLabel value="yes" control={<Radio />} label="是" />
-                        <FormControlLabel value="no" control={<Radio />} label="否" />
-                        <FormControlLabel value="notSure" control={<Radio />} label="不確定" />
+                        <FormControlLabel value="是" control={<Radio />} label="是" />
+                        <FormControlLabel value="否" control={<Radio />} label="否" />
+                        <FormControlLabel value="不確定" control={<Radio />} label="不確定" />
                     </RadioGroup>
                     <FormLabel component="legend">是否提供外送</FormLabel>
                     <RadioGroup name="delivery" value={state.delivery} onChange={handleUpdateFiled}>
-                        <FormControlLabel value="yes" control={<Radio />} label="是" />
-                        <FormControlLabel value="no" control={<Radio />} label="否" />
-                        <FormControlLabel value="notSure" control={<Radio />} label="不確定" />
+                        <FormControlLabel value="是" control={<Radio />} label="是" />
+                        <FormControlLabel value="否" control={<Radio />} label="否" />
+                        <FormControlLabel value="不確定" control={<Radio />} label="不確定" />
                     </RadioGroup>
                 </FormControl>
                 <div className="checkbox-group">
