@@ -63,11 +63,11 @@ export default props => {
                                     <Popup>
                                         <p>店家名稱: {marker["shop_name"]}</p>
                                         <p>店家防疫措施: {marker["prevention_measures"]}</p>
-                                        <p>是否仍提供內用服務: {marker["inside"]}</p>
+                                        <p>是否仍提供內用服務: {marker["inside"] === ''? '不確定': (marker["inside"]? '是' : '否')}</p>
                                         <p>內用防疫措施: {marker["inside_status"]}</p>
-                                        <p>是否提供外帶: {marker["outside"]}</p>
-                                        <p>是否提供外送: {marker["delivery"]}</p>
-                                        <p>是否繼續維持營業: {marker["open"]}</p>
+                                        <p>是否提供外帶: {marker["outside"] === ''? '不確定': (marker["outside"]? '是' : '否')}</p>
+                                        <p>是否提供外送: {marker["delivery"] === ''? '不確定': (marker["delivery"]? '是' : '否')}</p>
+                                        <p>是否繼續維持營業: {marker["open"]? '是' : '否'}</p>
                                         <p>時間戳記: {new Date(marker["last_updated_at"] * 1000).toLocaleString('lt-LT', { timeZone: 'Asia/Taipei' })}</p>
                                         <p>營業時間調整情況: {marker["open_time_change"]}</p>
                                         <p>防疫外帶或外送優惠: {marker["discount"]}</p>
