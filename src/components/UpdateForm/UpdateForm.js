@@ -55,7 +55,7 @@ const UpdateForm = props => {
     };
 
     const handleFetchLatAndLong = (url) => {
-        if((url.split("/").length > 0 && url.indexOf("@") > -1) || url.includes('goo.gl/maps')) {
+        if((url.split("/").length > 0 && url.indexOf("@") > -1) || url.includes('goo.gl/maps') || url.includes('g.page')) {
             // const urlArr = url.split("/");
             // setState(state => ({ ...state, name: decodeURIComponent(urlArr[5]) }));
             // if (urlArr[6]) {
