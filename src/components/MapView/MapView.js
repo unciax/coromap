@@ -61,7 +61,7 @@ export default props => {
                             {state.markerList.map(marker=> 
                                 <Marker position={[marker.latitude, marker.longitude]} key={marker.key}>
                                     <Popup>
-                                        <p>店家名稱: {marker["shop_name"]}</p>
+                                        <h4>店家名稱: <a href={marker["url"]} target="_blank" rel="noreferrer"> {marker["shop_name"]} </a> </h4>
                                         <p>店家防疫措施: {marker["prevention_measures"]}</p>
                                         <p>是否仍提供內用服務: {marker["inside"] === ''? '不確定': (marker["inside"]? '是' : '否')}</p>
                                         <p>內用防疫措施: {marker["inside_status"]}</p>
