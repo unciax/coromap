@@ -7,9 +7,9 @@ import UpdateForm from "./components/UpdateForm/UpdateForm";
 import { useSnackbar } from "notistack";
 import { message } from "./utils/common";
 
-
 import { fetchMapData, updateStoresInfo } from "./utils/api";
 
+import feedback from "./chat.png";
 import "./app.scss";
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
 
   React.useEffect(()=>{
     handleFetchMapData();
-  }, [])
+  }, []);
 
   const handleFetchMapData = async () => {
     setState(state => ({ ...state, fetchMapDataLoading: true }));
@@ -62,8 +62,21 @@ function App() {
     handleUpdateMapData(val)
   };
 
+ 
+  const openFeedback = (e) => {
+    e.stopPropagation()
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLSdO9A9-LVmdGM5cgIHw7N_G4pZvhrtPTmYop0fPy6eNBmJwrQ/viewform", "_blank")
+  };
+
   return (
     <div className="App">
+      <div 
+        className="feedback" 
+        onClick={openFeedback}
+        >
+        <img src={feedback} className="feedback-img" alt="feedback"/>
+        <p>使用者回饋表單</p>
+      </div>
       <div className={state.isSideMenuOpen ? "side-menu-open" : "side-menu-close"}>
         { state.isSideMenuOpen &&
           <>
