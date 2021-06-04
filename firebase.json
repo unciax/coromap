@@ -1,7 +1,6 @@
 {
   "hosting": {
     "public": "build",
-    "site": "coromap-64044",
     "ignore": [
       "firebase.json",
       "**/.*",
