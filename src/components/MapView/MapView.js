@@ -10,6 +10,7 @@ import "./styles.scss";
 export default props => {
     const { fetchMapDataLoading, mapDataList, toggleSideMenu, isSideMenuOpen } = props;
     const mapRef = React.useRef(null);
+    const position = [23.7078059,121.3960086];
     const [state, setState] = React.useState({
         markerList: [],
         bond:[[25.268576, 121.611722], [23.879299, 120.294881], [23.762836, 121.544090], [21.257621, 120.740482], [21.899800, 120.837252]]
@@ -47,8 +48,8 @@ export default props => {
                 </div>
                 <MapContainer 
                     ref={mapRef}
-                    bounds={state.markerList.length === 0 ? [[25.268576, 121.611722], [23.879299, 120.294881], [23.762836, 121.544090], [21.257621, 120.740482], [21.899800, 120.837252]] : state.bond}
-                    zoom={13} 
+                    center={position}
+                    zoom={8} 
                     scrollWheelZoom={false}
                     className="map"
                     animate={true}
