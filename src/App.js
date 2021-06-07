@@ -45,14 +45,16 @@ function App() {
     setState(state => ({ ...state, fetchMapDataLoading: true }));
 
     const res = await updateStoresInfo(val);
+    setState(state => ({ ...state, fetchMapDataLoading: false }));
+
     if(res.status === 200){
-      setState(state => ({ ...state, fetchMapDataLoading: false }));
       message( enqueueSnackbar, "上傳店家成功。", "success");
+      window.location.reload()
+    }else if(res.response.status === 400){
+      message( enqueueSnackbar, res.response.data.detail, "error");
     }else{
-      setState(state => ({ ...state, fetchMapDataLoading: false }));
       message( enqueueSnackbar, "上傳店家失敗。", "error");
     };
-    window.location.reload();
     // await handleFetchMapData();
   };
 
