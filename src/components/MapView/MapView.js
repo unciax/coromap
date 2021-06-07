@@ -1,8 +1,8 @@
 import React from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
 import Icon from "@material-ui/core/Icon";
-
+import feedback from "../../chat.png";
 import Spinner from "../Spinner/Spinner"; 
 
 import "./styles.scss";
@@ -10,11 +10,16 @@ import "./styles.scss";
 export default props => {
     const { fetchMapDataLoading, mapDataList, toggleSideMenu, isSideMenuOpen } = props;
     const mapRef = React.useRef(null);
-    const position = [23.7078059,121.3960086];
+    const position = [23.6374115,120.8873666];
     const [state, setState] = React.useState({
         markerList: [],
         bond:[[25.268576, 121.611722], [23.879299, 120.294881], [23.762836, 121.544090], [21.257621, 120.740482], [21.899800, 120.837252]]
     });
+
+    const openFeedback = (e) => {
+        e.stopPropagation()
+        window.open("https://docs.google.com/forms/d/e/1FAIpQLSdO9A9-LVmdGM5cgIHw7N_G4pZvhrtPTmYop0fPy6eNBmJwrQ/viewform", "_blank")
+    };
 
     React.useEffect(()=>{
         if(Object.entries(mapDataList).length > 0){
@@ -51,6 +56,7 @@ export default props => {
                     center={position}
                     zoom={8} 
                     scrollWheelZoom={false}
+                    zoomControl={false}
                     className="map"
                     animate={true}
                     tap={false}
@@ -59,6 +65,14 @@ export default props => {
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
+                    <ZoomControl position="bottomright" />
+                    <div 
+                        className="feedback" 
+                        onClick={openFeedback}
+                        >
+                        <img src={feedback} className="feedback-img" alt="feedback"/>
+                        <p>使用者回饋表單</p>
+                    </div>
                     <MarkerClusterGroup>
                             {state.markerList.map(marker=> 
                                 <Marker position={[marker.latitude, marker.longitude]} key={marker.key}>
