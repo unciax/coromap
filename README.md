@@ -1,6 +1,6 @@
-# HASH MAP
+# Coromap
 
-The project empowered by Hash. Demo: https://hash-map.web.app[https://hash-map.web.app]
+The project empowered by Hash. Demo: https://coromap.app[https://coromap.app]
 ## Install Command and Develop Tool
 this project was developed wit React17.0.2.
 - nodejs recommend v14.17.0 LTS
